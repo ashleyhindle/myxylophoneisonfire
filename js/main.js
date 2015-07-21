@@ -2,7 +2,15 @@ $(document).ready(function() {
     FastClick.attach(document.body);
     var sounds = {};
     var soundsCtx = {};
-	var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+	var contextClass = (window.AudioContext || 
+				  	window.webkitAudioContext || 
+				  	window.mozAudioContext || 
+					window.oAudioContext || 
+					window.msAudioContext);
+	var audioCtx = false;
+	if (contextClass) {
+    	audioCtx = new contextClass();
+	}
 
 	$('#hideinfolink').click(function(event) {
 		event.preventDefault();
