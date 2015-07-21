@@ -39,19 +39,20 @@ $(document).ready(function() {
 		    source.connect(audioCtx.destination);
 		    source.start(0);
 		} else {
-			var audioElement = document.createElement('audio');
-			audioElement.setAttribute('src', $('.bar.'+note).attr('data-sound-location'));
-	        audioElement.setAttribute('autoplay', 'autoplay');
-	        audioElement.load();
-	        
-	        audioElement.addEventListener('load', function() {
-	            audioElement.play();
-	        }, true);
+			sounds[note].play();
 		}
 	}
 
     $('.bar').each(function() {
-    	loadNote($(this).attr('data-note'), $(this).attr('data-sound-location'));
+    	if (audioCtx) {
+    		loadNote($(this).attr('data-note'), $(this).attr('data-sound-location'));
+    	} else {
+			var audioElement = document.createElement('audio');
+			audioElement.setAttribute('src', $(this).attr('data-sound-location'));
+		    audioElement.setAttribute('preload', 'auto');
+		    audioElement.load();
+		    sounds[$(this).attr('data-note')] = audioElement;
+		}
     });
 
 	function removePlayingClass(el) {
