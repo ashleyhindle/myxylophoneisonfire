@@ -28,6 +28,10 @@
 
 }
 
+.playing {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3) !important; /*thankyou http://stackoverflow.com/a/26073962/1405495 */
+}
+
 .c {
 	background-color: red;
 	min-height: 600px;
@@ -76,7 +80,8 @@
 	margin-bottom: 180px;
 }
 
-.small {
+.c-small {
+	background-color: red;
 	min-height: 180px;
 	margin-top: 210px;
 	margin-bottom: 210px;
