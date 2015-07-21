@@ -25,10 +25,21 @@ $(document).ready(function() {
 	}
 
 	function playSound(note) {
-	    var source = audioCtx.createBufferSource();
-	    source.buffer = soundsCtx[note];
-	    source.connect(audioCtx.destination);
-	    source.start(0);
+		if (audioCtx) {
+		    var source = audioCtx.createBufferSource();
+		    source.buffer = soundsCtx[note];
+		    source.connect(audioCtx.destination);
+		    source.start(0);
+		} else {
+			var audioElement = document.createElement('audio');
+			audioElement.setAttribute('src', $('.bar.'+note).attr('data-sound-location'));
+	        audioElement.setAttribute('autoplay', 'autoplay');
+	        audioElement.load();
+	        
+	        audioElement.addEventListener('load', function() {
+	            audioElement.play();
+	        }, true);
+		}
 	}
 
     $('.bar').each(function() {
