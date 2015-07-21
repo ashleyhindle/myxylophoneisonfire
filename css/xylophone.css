@@ -1,0 +1,92 @@
+#xylophone {
+	min-height: 600px;
+	height: 600px;
+	padding: 10px;
+}
+
+.bar {
+	padding: 6px;
+	margin: 6px;
+	width: 130px;
+	border: 1px solid #333;
+	float: left;
+	cursor: pointer;
+	text-align: center;
+	position: relative;
+}
+
+.bar span {
+	font-weight: 800;
+	font-size: 60px;
+	position: absolute;
+	bottom: 0px;
+	left: 47px;
+	color: #333333;
+   -webkit-text-fill-color: #FFFFFF;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #000000;
+
+}
+
+.c {
+	background-color: red;
+	min-height: 600px;
+	margin-top: 0px;
+}
+
+.d {
+	background-color: orange;
+	min-height: 540px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.e {
+	background-color: yellow;
+	min-height: 480px;
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+.f {
+	background-color: green;
+	min-height: 420px;
+	margin-top: 90px;
+	margin-bottom: 90px;
+}
+
+.g {
+	background-color: blue;
+	min-height: 360px;
+	margin-top: 120px;
+	margin-bottom: 120px;
+}
+
+.a {
+	background-color: #4B0082;
+	min-height: 300px;
+	margin-top: 150px;
+	margin-bottom: 150px;
+}
+
+.b {
+	background-color: #9F00FF;
+	min-height: 240px;
+	margin-top: 180px;
+	margin-bottom: 180px;
+}
+
+.small {
+	min-height: 180px;
+	margin-top: 210px;
+	margin-bottom: 210px;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
