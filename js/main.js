@@ -2,12 +2,17 @@ $(document).ready(function() {
     FastClick.attach(document.body);
     var sounds = {};
 
-    $('.bar').each(function() {
-    	var audioElement = document.createElement('audio');
-    	audioElement.setAttribute('src', $(this).attr('data-sound-location'));
-        audioElement.setAttribute('preload', 'auto');
+	$('button').click(function(event){
+		console.log('come on');
+	    $('.bar').each(function() {
+	    	var audioElement = document.createElement('audio');
+	    	audioElement.setAttribute('src', $(this).attr('data-sound-location'));
+	        audioElement.setAttribute('preload', 'auto');
+	        audioElement.load();
 
-    	sounds[$(this).attr('data-note')] = audioElement;
+	    	sounds[$(this).attr('data-note')] = audioElement;
+	    });
+	    $('#xylophone').show();
     });
 
 	function removePlayingClass(el) {
