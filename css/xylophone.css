@@ -7,7 +7,7 @@
 .bar {
 	padding: 6px;
 	margin: 6px;
-	width: 130px;
+	width: 125px;
 	border: 1px solid #333;
 	float: left;
 	cursor: pointer;
@@ -20,7 +20,7 @@
 	font-size: 60px;
 	position: absolute;
 	bottom: 0px;
-	left: 47px;
+	left: 45px;
 	color: #333333;
    -webkit-text-fill-color: #FFFFFF;
    -webkit-text-stroke-width: 1px;
@@ -94,4 +94,8 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.clear {
+	clear:both;
 }
