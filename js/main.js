@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    FastClick.attach(document.body);
+
 	function playSound(location) {
 		var audioElement = document.createElement('audio');
 		audioElement.setAttribute('src', location);
@@ -8,10 +10,6 @@ $(document).ready(function() {
         audioElement.addEventListener('load', function() {
             audioElement.play();
         }, true);
-
-        audioElement.addEventListener('ended', function() {
-        	console.log('ended');
-        });
 	}
 
 	function removePlayingClass(className) {
