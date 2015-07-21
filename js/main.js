@@ -5,7 +5,7 @@ $(document).ready(function() {
     $('.bar').each(function() {
     	var audioElement = document.createElement('audio');
     	audioElement.setAttribute('src', $(this).attr('data-sound-location'));
-        audioElement.setAttribute('preload', 'true');
+        audioElement.setAttribute('preload', 'auto');
 
     	sounds[$(this).attr('data-note')] = audioElement;
     });
