@@ -1,5 +1,17 @@
 $(document).ready(function() {
     FastClick.attach(document.body);
+    var sounds = {};
+
+    $('.bar').each(function() {
+    	var audioElement = document.createElement('audio');
+    	audioElement.setAttribute('src', $(this).attr('data-sound-location'));
+        audioElement.setAttribute('autoplay', 'autoplay');
+        audioElement.load();
+
+    	sounds[$(this).attr('data-note')] = audioElement;
+    });
+
+    console.log(sounds);
 
 	function playSound(location) {
 		var audioElement = document.createElement('audio');
@@ -12,41 +24,42 @@ $(document).ready(function() {
         }, true);
 	}
 
-	function removePlayingClass(className) {
-        $(className).removeClass('playing');
+	function removePlayingClass(el) {
+        el.removeClass('playing');
 	}
 
-	function playSoundByClass(className) {
-		$(className).addClass('playing');
-		playSound($(className).attr('data-sound-location'));
-		setTimeout(removePlayingClass, 100, className);
+	function playSoundByNote(note) {
+		var el = $('.bar.' + note).first();
+		el.addClass('playing');
+		sounds[el.attr('data-note')].play();
+		setTimeout(removePlayingClass, 100, el);
 	}
 
 	$(document).keypress(function( event ) {
 		switch(event.keyCode) {
 			case 113: //Q
-				playSoundByClass('.bar.c');
+				playSoundByNote('c');
 				break;
 			case 119: //W
-				playSoundByClass('.bar.d');
+				playSoundByNote('d');
 				break;
 			case 101: //E
-				playSoundByClass('.bar.e');
+				playSoundByNote('e');
 				break;
 			case 114: //R
-				playSoundByClass('.bar.f');
+				playSoundByNote('f');
 				break;
 			case 116: //T
-				playSoundByClass('.bar.g');
+				playSoundByNote('g');
 				break;
 			case 121: //Y
-				playSoundByClass('.bar.a');
+				playSoundByNote('a');
 				break;
 			case 117: //U
-				playSoundByClass('.bar.b');
+				playSoundByNote('b');
 				break;
 			case 105: //I
-				playSoundByClass('.bar.c-small');
+				playSoundByNote('c-small');
 				break;
 			default:
 				return true;
@@ -54,6 +67,6 @@ $(document).ready(function() {
 	});
 
 	$('.bar').click(function(event) {
-        playSoundByClass('.bar.' + $(this).attr('class').replace(/bar /, '').replace(/playing/, ''));
+        playSoundByNote($(this).attr('data-note'));
 	});
 });
