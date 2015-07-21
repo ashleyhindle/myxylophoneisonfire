@@ -29,7 +29,7 @@
 }
 
 .playing {
-    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3) !important; /*thankyou http://stackoverflow.com/a/26073962/1405495 */
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.6) !important; /*thankyou http://stackoverflow.com/a/26073962/1405495 */
 }
 
 .c {

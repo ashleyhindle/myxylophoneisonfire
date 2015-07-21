@@ -1,18 +1,33 @@
 $(document).ready(function() {
     FastClick.attach(document.body);
     var sounds = {};
+    var soundsCtx = {};
+	var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-	$('button').click(function(event){
-		console.log('come on');
-	    $('.bar').each(function() {
-	    	var audioElement = document.createElement('audio');
-	    	audioElement.setAttribute('src', $(this).attr('data-sound-location'));
-	        audioElement.setAttribute('preload', 'auto');
-	        audioElement.load();
+	function loadNote(note, url) {
+		var request = new XMLHttpRequest();
+		request.open("GET", url, true);
+		request.responseType = "arraybuffer";
+		request.onload = function() {
+			audioCtx.decodeAudioData(request.response, function(buffer) {
+				soundsCtx[note] = buffer;
+			}, function(error) {
+				console.error("decodeAudioData error", error);
+			});
+		};
 
-	    	sounds[$(this).attr('data-note')] = audioElement;
-	    });
-	    $('#xylophone').show();
+		request.send();
+	}
+
+	function playSound(note) {
+	    var source = audioCtx.createBufferSource();
+	    source.buffer = soundsCtx[note];
+	    source.connect(audioCtx.destination);
+	    source.start(0);
+	}
+
+    $('.bar').each(function() {
+    	loadNote($(this).attr('data-note'), $(this).attr('data-sound-location'));
     });
 
 	function removePlayingClass(el) {
@@ -22,7 +37,7 @@ $(document).ready(function() {
 	function playSoundByNote(note) {
 		var el = $('.bar.' + note).first();
 		el.addClass('playing');
-		sounds[el.attr('data-note')].cloneNode().play();
+		playSound(note);
 		setTimeout(removePlayingClass, 100, el);
 	}
 
