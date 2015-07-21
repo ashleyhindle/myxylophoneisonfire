@@ -11,19 +11,6 @@ $(document).ready(function() {
     	sounds[$(this).attr('data-note')] = audioElement;
     });
 
-    console.log(sounds);
-
-	function playSound(location) {
-		var audioElement = document.createElement('audio');
-		audioElement.setAttribute('src', location);
-        audioElement.setAttribute('autoplay', 'autoplay');
-        audioElement.load();
-        
-        audioElement.addEventListener('load', function() {
-            audioElement.play();
-        }, true);
-	}
-
 	function removePlayingClass(el) {
         el.removeClass('playing');
 	}
@@ -31,7 +18,7 @@ $(document).ready(function() {
 	function playSoundByNote(note) {
 		var el = $('.bar.' + note).first();
 		el.addClass('playing');
-		sounds[el.attr('data-note')].play();
+		sounds[el.attr('data-note')].cloneNode().play();
 		setTimeout(removePlayingClass, 100, el);
 	}
 
