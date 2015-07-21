@@ -1,4 +1,5 @@
 #xylophone {
+	width: 100%;
 	min-height: 600px;
 	height: 600px;
 	padding: 10px;
@@ -7,20 +8,16 @@
 .bar {
 	padding: 6px;
 	margin: 6px;
-	width: 10%;
+	width: 8%;
 	border: 1px solid #333;
 	float: left;
 	cursor: pointer;
 	text-align: center;
-	position: relative;
 }
 
 .bar span {
 	font-weight: 800;
 	font-size: 60px;
-	position: absolute;
-	bottom: 0px;
-	left: 30%;
 	color: #333333;
    -webkit-text-fill-color: #FFFFFF;
    -webkit-text-stroke-width: 1px;
@@ -28,63 +25,56 @@
 
 }
 
+/* Standing on the shoulder of giants */
+/* iPad in portrait and landscape */
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  {
+}
+
 .playing {
-    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.6) !important; /*thankyou http://stackoverflow.com/a/26073962/1405495 */
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.4) !important; /* thankyou http://stackoverflow.com/a/26073962/1405495 */
 }
 
 .c {
 	background-color: red;
-	min-height: 600px;
-	margin-top: 0px;
+	min-height: 60%;
 }
 
 .d {
 	background-color: orange;
-	min-height: 540px;
-	margin-top: 30px;
-	margin-bottom: 30px;
+	min-height: 55%;
 }
 
 .e {
 	background-color: yellow;
-	min-height: 480px;
-	margin-top: 60px;
-	margin-bottom: 60px;
+	min-height: 50%;
 }
 
 .f {
 	background-color: green;
-	min-height: 420px;
-	margin-top: 90px;
-	margin-bottom: 90px;
+	min-height: 45%;
 }
 
 .g {
 	background-color: blue;
-	min-height: 360px;
-	margin-top: 120px;
-	margin-bottom: 120px;
+	min-height: 40%;
 }
 
 .a {
 	background-color: #4B0082;
-	min-height: 300px;
-	margin-top: 150px;
-	margin-bottom: 150px;
+	min-height: 35%;
 }
 
 .b {
 	background-color: #9F00FF;
-	min-height: 240px;
-	margin-top: 180px;
-	margin-bottom: 180px;
+	min-height: 30%;
 }
 
 .c-small {
 	background-color: red;
-	min-height: 180px;
-	margin-top: 210px;
-	margin-bottom: 210px;
+	min-height: 25%;
 }
 
 .noselect {
@@ -102,4 +92,14 @@
 
 .hide {
 	display:none;
+}
+
+footer {
+	padding: 6px;
+}
+
+#hideinfo {
+	padding: 4px;
+	margin: 4px;
+	border: 1px solid #444;
 }

@@ -4,6 +4,11 @@ $(document).ready(function() {
     var soundsCtx = {};
 	var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
+	$('#hideinfolink').click(function(event) {
+		event.preventDefault();
+		$('#hideinfo').hide();
+	});
+
 	function loadNote(note, url) {
 		var request = new XMLHttpRequest();
 		request.open("GET", url, true);
