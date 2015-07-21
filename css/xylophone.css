@@ -1,7 +1,6 @@
 #xylophone {
 	width: 100%;
-	min-height: 600px;
-	height: 600px;
+	height: 450px;
 	padding: 10px;
 }
 
@@ -39,42 +38,42 @@ and (max-device-width : 1024px)  {
 
 .c {
 	background-color: red;
-	min-height: 60%;
+	min-height: 80%;
 }
 
 .d {
 	background-color: orange;
-	min-height: 55%;
+	min-height: 75%;
 }
 
 .e {
 	background-color: yellow;
-	min-height: 50%;
+	min-height: 60%;
 }
 
 .f {
 	background-color: green;
-	min-height: 45%;
+	min-height: 55%;
 }
 
 .g {
 	background-color: blue;
-	min-height: 40%;
+	min-height: 50%;
 }
 
 .a {
 	background-color: #4B0082;
-	min-height: 35%;
+	min-height: 45%;
 }
 
 .b {
 	background-color: #9F00FF;
-	min-height: 30%;
+	min-height: 40%;
 }
 
 .c-small {
 	background-color: red;
-	min-height: 25%;
+	min-height: 35%;
 }
 
 .noselect {
