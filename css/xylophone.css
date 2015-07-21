@@ -48,32 +48,32 @@ and (max-device-width : 1024px)  {
 
 .e {
 	background-color: yellow;
-	min-height: 60%;
+	min-height: 70%;
 }
 
 .f {
 	background-color: green;
-	min-height: 55%;
+	min-height: 65%;
 }
 
 .g {
 	background-color: blue;
-	min-height: 50%;
+	min-height: 60%;
 }
 
 .a {
 	background-color: #4B0082;
-	min-height: 45%;
+	min-height: 55%;
 }
 
 .b {
 	background-color: #9F00FF;
-	min-height: 40%;
+	min-height: 50%;
 }
 
 .c-small {
 	background-color: red;
-	min-height: 35%;
+	min-height: 45%;
 }
 
 .noselect {
