@@ -114,8 +114,8 @@ $(document).ready(function() {
 	});
 
 	$('.songlink').click(function(event) {
-		playSoundByNote('c');
-		
+		playSoundByNote('silence');
+
 		var songLocation = $(this).attr('data-song-location');
 		console.log('Playing: ' + songLocation);
 
