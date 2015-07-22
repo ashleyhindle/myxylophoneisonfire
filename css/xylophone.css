@@ -102,3 +102,9 @@ footer {
 	margin: 4px;
 	border: 1px solid #444;
 }
+
+.songlink {
+	cursor:pointer;
+	color: blue;
+	text-decoration: underline
+}

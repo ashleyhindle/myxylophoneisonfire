@@ -30,121 +30,18 @@ $(document).ready(function() {
 	$('#hideinfolink').click(function(event) {
 		event.preventDefault();
 		$('#hideinfo').hide();
-	});
-
-	$('#twinklelink').click(function(event) {
-		event.stopPropagation();
 		preloadNotes();
-		var notes = [
-			{'note': 'c', 'delay': 300},
-			{'note': 'c', 'delay': 300},
-			{'note': 'g', 'delay': 300},
-			{'note': 'g', 'delay': 300},
-			{'note': 'a', 'delay': 300},
-			{'note': 'a', 'delay': 300},
-			{'note': 'g', 'delay': 300},
-
-			{'note': 'f', 'delay': 500},
-			{'note': 'f', 'delay': 300},
-			{'note': 'e', 'delay': 300},
-			{'note': 'e', 'delay': 300},
-			{'note': 'd', 'delay': 300},
-			{'note': 'd', 'delay': 300},
-			{'note': 'c', 'delay': 300},
-
-			{'note': 'g', 'delay': 500},
-			{'note': 'g', 'delay': 300},
-			{'note': 'f', 'delay': 300},
-			{'note': 'f', 'delay': 300},
-			{'note': 'e', 'delay': 300},
-			{'note': 'e', 'delay': 300},
-			{'note': 'd', 'delay': 300},
-
-			{'note': 'g', 'delay': 500},
-			{'note': 'g', 'delay': 300},
-			{'note': 'f', 'delay': 300},
-			{'note': 'f', 'delay': 300},
-			{'note': 'e', 'delay': 300},
-			{'note': 'e', 'delay': 300},
-			{'note': 'd', 'delay': 300},
-
-			{'note': 'c', 'delay': 500},
-			{'note': 'c', 'delay': 300},
-			{'note': 'g', 'delay': 300},
-			{'note': 'g', 'delay': 300},
-			{'note': 'a', 'delay': 300},
-			{'note': 'a', 'delay': 300},
-			{'note': 'g', 'delay': 300},
-
-			{'note': 'f', 'delay': 500},
-			{'note': 'f', 'delay': 300},
-			{'note': 'e', 'delay': 300},
-			{'note': 'e', 'delay': 300},
-			{'note': 'd', 'delay': 300},
-			{'note': 'd', 'delay': 300},
-			{'note': 'c', 'delay': 300},
-		];
-
-		playDictionaryOfNotes(notes);
 	});
 
-	$('#hickorylink').click(function(event) {
-		event.stopPropagation();
-		preloadNotes();
-		var notes = [
-			{'note': 'e', 'delay': 300},
-			{'note': 'f', 'delay': 300},
-			{'note': 'g', 'delay': 300},
-			{'note': 'g', 'delay': 300},
-			{'note': 'a', 'delay': 300},
-			{'note': 'b', 'delay': 300},
-			{'note': 'c-small', 'delay': 300},
+	$('.songlink').click(function(event) {
+		var songLocation = $(this).attr('data-song-location');
 
-			{'note': 'g', 'delay': 700},
-			{'note': 'e', 'delay': 300},
-			{'note': 'f', 'delay': 300},
-			{'note': 'g', 'delay': 300},
-			{'note': 'g', 'delay': 300},
-			{'note': 'a', 'delay': 300},
-			{'note': 'b', 'delay': 300},
-			{'note': 'c-small', 'delay': 300},
-
-			{'note': 'g', 'delay': 800},
-			{'note': 'c-small', 'delay': 400},
-			{'note': 'c-small', 'delay': 400},
-			{'note': 'g', 'delay': 400},
-			{'note': 'b', 'delay': 700},
-			{'note': 'a', 'delay': 400},
-			{'note': 'a', 'delay': 400},
-			{'note': 'g', 'delay': 400},
-
-			{'note': 'g', 'delay': 600},
-			{'note': 'a', 'delay': 400},
-			{'note': 'g', 'delay': 400},
-
-			{'note': 'f', 'delay': 400},
-			{'note': 'e', 'delay': 400},
-			{'note': 'd', 'delay': 400},
-			{'note': 'c', 'delay': 400},
-
-			{'note': 'e', 'delay': 800},
-			{'note': 'c', 'delay': 800},
-			{'note': 'e', 'delay': 800},
-			{'note': 'c', 'delay': 800},
-
-			{'note': 'c', 'delay': 500},
-			{'note': 'd', 'delay': 50},
-			{'note': 'e', 'delay': 50},
-			{'note': 'f', 'delay': 50},
-			{'note': 'g', 'delay': 50},
-			{'note': 'a', 'delay': 50},
-			{'note': 'b', 'delay': 50},
-			{'note': 'c-small', 'delay': 50},
-		];
-
-		playDictionaryOfNotes(notes);
+		$.getJSON(songLocation, function(data) {
+			playDictionaryOfNotes(data.notes);
+		});
 	});
 
+	
 	function playDictionaryOfNotes(notes) {
 		var lengthSoFar = 0;
 
