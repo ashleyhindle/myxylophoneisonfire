@@ -17,6 +17,61 @@ $(document).ready(function() {
 		$('#hideinfo').hide();
 	});
 
+	$('#twinklelink').click(function(event) {
+		event.preventDefault();
+		var notes = [
+			{'note': 'c', 'delay': 300},
+			{'note': 'c', 'delay': 300},
+			{'note': 'g', 'delay': 300},
+			{'note': 'g', 'delay': 300},
+			{'note': 'a', 'delay': 300},
+			{'note': 'a', 'delay': 300},
+			{'note': 'g', 'delay': 300},
+
+			{'note': 'f', 'delay': 500},
+			{'note': 'f', 'delay': 300},
+			{'note': 'e', 'delay': 300},
+			{'note': 'e', 'delay': 300},
+			{'note': 'd', 'delay': 300},
+			{'note': 'd', 'delay': 300},
+			{'note': 'c', 'delay': 300},
+
+			{'note': 'g', 'delay': 500},
+			{'note': 'g', 'delay': 300},
+			{'note': 'f', 'delay': 300},
+			{'note': 'f', 'delay': 300},
+			{'note': 'e', 'delay': 300},
+			{'note': 'e', 'delay': 300},
+			{'note': 'd', 'delay': 300},
+
+			{'note': 'g', 'delay': 500},
+			{'note': 'g', 'delay': 300},
+			{'note': 'f', 'delay': 300},
+			{'note': 'f', 'delay': 300},
+			{'note': 'e', 'delay': 300},
+			{'note': 'e', 'delay': 300},
+			{'note': 'd', 'delay': 300},
+
+			{'note': 'c', 'delay': 500},
+			{'note': 'c', 'delay': 300},
+			{'note': 'g', 'delay': 300},
+			{'note': 'g', 'delay': 300},
+			{'note': 'a', 'delay': 300},
+			{'note': 'a', 'delay': 300},
+			{'note': 'g', 'delay': 300},
+
+			{'note': 'f', 'delay': 500},
+			{'note': 'f', 'delay': 300},
+			{'note': 'e', 'delay': 300},
+			{'note': 'e', 'delay': 300},
+			{'note': 'd', 'delay': 300},
+			{'note': 'd', 'delay': 300},
+			{'note': 'c', 'delay': 300},
+		];
+
+		playDictionaryOfNotes(notes);
+	});
+
 	$('#hickorylink').click(function(event) {
 		event.preventDefault();
 		var notes = [
@@ -70,13 +125,17 @@ $(document).ready(function() {
 			{'note': 'c-small', 'delay': 50},
 		];
 
+		playDictionaryOfNotes(notes);
+	});
+
+	function playDictionaryOfNotes(notes) {
 		var lengthSoFar = 0;
 
 		for (var i=0;i<notes.length;i++) {
 			setTimeout(playSoundByNote, lengthSoFar + notes[i]['delay'], notes[i]['note']);
 			lengthSoFar += notes[i]['delay'];
 		}
-	});
+	}
 
 	function loadNote(note, url) {
 		var request = new XMLHttpRequest();
