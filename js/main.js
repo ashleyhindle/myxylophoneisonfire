@@ -60,14 +60,14 @@ $(document).ready(function() {
 			{'note': 'e', 'delay': 800},
 			{'note': 'c', 'delay': 800},
 
-			{'note': 'c-small', 'delay': 350},
-			{'note': 'b', 'delay': 50},
-			{'note': 'a', 'delay': 50},
-			{'note': 'g', 'delay': 50},
-			{'note': 'f', 'delay': 50},
-			{'note': 'e', 'delay': 50},
+			{'note': 'c', 'delay': 500},
 			{'note': 'd', 'delay': 50},
-			{'note': 'c', 'delay': 50},
+			{'note': 'e', 'delay': 50},
+			{'note': 'f', 'delay': 50},
+			{'note': 'g', 'delay': 50},
+			{'note': 'a', 'delay': 50},
+			{'note': 'b', 'delay': 50},
+			{'note': 'c-small', 'delay': 50},
 		];
 
 		var lengthSoFar = 0;
