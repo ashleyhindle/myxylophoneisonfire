@@ -33,6 +33,7 @@ $(document).ready(function() {
 	});
 
 	$('#twinklelink').click(function(event) {
+		event.preventDefault();
 		preloadNotes();
 		var notes = [
 			{'note': 'c', 'delay': 300},
@@ -88,6 +89,7 @@ $(document).ready(function() {
 	});
 
 	$('#hickorylink').click(function(event) {
+		event.preventDefault();
 		preloadNotes();
 		var notes = [
 			{'note': 'e', 'delay': 300},
@@ -223,4 +225,6 @@ $(document).ready(function() {
 	$('.bar').click(function(event) {
         playSoundByNote($(this).attr('data-note'));
 	});
+
+	preloadNotes();
 });
