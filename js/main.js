@@ -12,6 +12,21 @@ $(document).ready(function() {
     	audioCtx = new contextClass();
 	}
 
+
+	function preloadNotes() {
+	    $('.bar').each(function() {
+	    	if (audioCtx) {
+	    		loadNote($(this).attr('data-note'), $(this).attr('data-sound-location'));
+	    	} else {
+				var audioElement = document.createElement('audio');
+				audioElement.setAttribute('src', $(this).attr('data-sound-location'));
+			    audioElement.setAttribute('preload', 'auto');
+			    audioElement.load();
+			    sounds[$(this).attr('data-note')] = audioElement;
+			}
+	    });
+	}
+
 	$('#hideinfolink').click(function(event) {
 		event.preventDefault();
 		$('#hideinfo').hide();
@@ -19,6 +34,7 @@ $(document).ready(function() {
 
 	$('#twinklelink').click(function(event) {
 		event.preventDefault();
+		preloadNotes();
 		var notes = [
 			{'note': 'c', 'delay': 300},
 			{'note': 'c', 'delay': 300},
@@ -74,6 +90,7 @@ $(document).ready(function() {
 
 	$('#hickorylink').click(function(event) {
 		event.preventDefault();
+		preloadNotes();
 		var notes = [
 			{'note': 'e', 'delay': 300},
 			{'note': 'f', 'delay': 300},
@@ -162,18 +179,6 @@ $(document).ready(function() {
 			sounds[note].play();
 		}
 	}
-
-    $('.bar').each(function() {
-    	if (audioCtx) {
-    		loadNote($(this).attr('data-note'), $(this).attr('data-sound-location'));
-    	} else {
-			var audioElement = document.createElement('audio');
-			audioElement.setAttribute('src', $(this).attr('data-sound-location'));
-		    audioElement.setAttribute('preload', 'auto');
-		    audioElement.load();
-		    sounds[$(this).attr('data-note')] = audioElement;
-		}
-    });
 
 	function removePlayingClass(el) {
         el.removeClass('playing');
