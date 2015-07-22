@@ -72,11 +72,9 @@ $(document).ready(function() {
 	}
 
 	function playSoundByNote(note) {
-		if (note != "silence") {
-			var el = $('.bar.' + note).first();
-			el.addClass('playing');
-			setTimeout(removePlayingClass, 130, el);
-		}
+		var el = $('.bar.' + note).first();
+		el.addClass('playing');
+		setTimeout(removePlayingClass, 130, el);
 		playSound(note);
 	}
 
