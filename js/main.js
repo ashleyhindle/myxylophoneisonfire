@@ -33,7 +33,7 @@ $(document).ready(function() {
 	});
 
 	$('#twinklelink').click(function(event) {
-		event.preventDefault();
+		event.stopPropagation();
 		preloadNotes();
 		var notes = [
 			{'note': 'c', 'delay': 300},
@@ -89,7 +89,7 @@ $(document).ready(function() {
 	});
 
 	$('#hickorylink').click(function(event) {
-		event.preventDefault();
+		event.stopPropagation();
 		preloadNotes();
 		var notes = [
 			{'note': 'e', 'delay': 300},
