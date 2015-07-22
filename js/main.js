@@ -31,17 +31,6 @@ $(document).ready(function() {
 		$('#hideinfo').hide();
 		preloadNotes();
 	});
-
-	$('.songlink').click(function(event) {
-		var songLocation = $(this).attr('data-song-location');
-		console.log('Playing: ' + songLocation);
-
-		$.getJSON(songLocation, function(data) {
-			console.log('Fully loaded: ' + songLocation);
-			playDictionaryOfNotes(data.notes);
-		});
-	});
-
 	
 	function playDictionaryOfNotes(notes) {
 		var lengthSoFar = 0;
@@ -122,6 +111,18 @@ $(document).ready(function() {
 
 	$('.bar').click(function(event) {
         playSoundByNote($(this).attr('data-note'));
+	});
+
+	$('.songlink').click(function(event) {
+		playSoundByNote('c');
+		
+		var songLocation = $(this).attr('data-song-location');
+		console.log('Playing: ' + songLocation);
+
+		$.getJSON(songLocation, function(data) {
+			console.log('Fully loaded: ' + songLocation);
+			playDictionaryOfNotes(data.notes);
+		});
 	});
 
 	preloadNotes();

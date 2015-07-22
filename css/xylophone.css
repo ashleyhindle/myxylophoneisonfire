@@ -107,4 +107,5 @@ footer {
 	cursor:pointer;
 	color: blue;
 	text-decoration: underline;
+	display: inline;
 }
