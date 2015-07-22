@@ -79,7 +79,7 @@ $(document).ready(function() {
 	}
 
 	$(document).keypress(function( event ) {
-		switch(event.keyCode) {
+		switch(event.charCode) {
 			case 113: //Q
 				playSoundByNote('c');
 				break;
