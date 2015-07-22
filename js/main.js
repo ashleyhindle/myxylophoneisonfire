@@ -60,15 +60,7 @@ $(document).ready(function() {
 			{'note': 'e', 'delay': 800},
 			{'note': 'c', 'delay': 800},
 
-			{'note': 'e', 'delay': 600},
-			{'note': 'f', 'delay': 300},
-			{'note': 'g', 'delay': 300},
-			{'note': 'g', 'delay': 300},
-			{'note': 'a', 'delay': 300},
-			{'note': 'b', 'delay': 300},
-			{'note': 'c-small', 'delay': 300},
-
-			{'note': 'c-small', 'delay': 50},
+			{'note': 'c-small', 'delay': 350},
 			{'note': 'b', 'delay': 50},
 			{'note': 'a', 'delay': 50},
 			{'note': 'g', 'delay': 50},
