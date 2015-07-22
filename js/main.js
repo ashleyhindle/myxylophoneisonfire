@@ -12,7 +12,6 @@ $(document).ready(function() {
     	audioCtx = new contextClass();
 	}
 
-
 	function preloadNotes() {
 	    $('.bar').each(function() {
 	    	if (audioCtx) {
@@ -35,8 +34,10 @@ $(document).ready(function() {
 
 	$('.songlink').click(function(event) {
 		var songLocation = $(this).attr('data-song-location');
+		console.log('Playing: ' + songLocation);
 
 		$.getJSON(songLocation, function(data) {
+			console.log('Fully loaded: ' + songLocation);
 			playDictionaryOfNotes(data.notes);
 		});
 	});
