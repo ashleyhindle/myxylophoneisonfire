@@ -17,6 +17,58 @@ $(document).ready(function() {
 		$('#hideinfo').hide();
 	});
 
+	$('#hickorylink').click(function(event) {
+		event.preventDefault();
+		var notes = [
+			{'note': 'e', 'delay': 300},
+			{'note': 'f', 'delay': 300},
+			{'note': 'g', 'delay': 300},
+			{'note': 'g', 'delay': 300},
+			{'note': 'a', 'delay': 300},
+			{'note': 'b', 'delay': 300},
+			{'note': 'c-small', 'delay': 300},
+
+			{'note': 'g', 'delay': 700},
+			{'note': 'e', 'delay': 300},
+			{'note': 'f', 'delay': 300},
+			{'note': 'g', 'delay': 300},
+			{'note': 'g', 'delay': 300},
+			{'note': 'a', 'delay': 300},
+			{'note': 'b', 'delay': 300},
+			{'note': 'c-small', 'delay': 300},
+
+			{'note': 'g', 'delay': 800},
+			{'note': 'c-small', 'delay': 400},
+			{'note': 'c-small', 'delay': 400},
+			{'note': 'g', 'delay': 400},
+			{'note': 'b', 'delay': 700},
+			{'note': 'a', 'delay': 400},
+			{'note': 'a', 'delay': 400},
+			{'note': 'g', 'delay': 400},
+
+			{'note': 'g', 'delay': 600},
+			{'note': 'a', 'delay': 400},
+			{'note': 'g', 'delay': 400},
+
+			{'note': 'f', 'delay': 400},
+			{'note': 'e', 'delay': 400},
+			{'note': 'd', 'delay': 400},
+			{'note': 'c', 'delay': 400},
+
+			{'note': 'e', 'delay': 800},
+			{'note': 'c', 'delay': 800},
+			{'note': 'e', 'delay': 800},
+			{'note': 'c', 'delay': 800},
+		];
+		
+		var lengthSoFar = 0;
+
+		for (var i=0;i<notes.length;i++) {
+			setTimeout(playSoundByNote, lengthSoFar + notes[i]['delay'], notes[i]['note']);
+			lengthSoFar += notes[i]['delay'];
+		}
+	});
+
 	function loadNote(note, url) {
 		var request = new XMLHttpRequest();
 		request.open("GET", url, true);
