@@ -110,7 +110,7 @@ $(document).ready(function() {
 	});
 
 	$('.bar').click(function(event) {
-        playSoundByNote($(this).attr('data-note'));
+		playSoundByNote($(this).attr('data-note'));
 	});
 
 	$('.songlink').click(function(event) {
@@ -126,4 +126,27 @@ $(document).ready(function() {
 	});
 
 	preloadNotes();
+
+	if ('song' in getUrlVars() && getUrlVars()['song'].length > 0) {
+		setTimeout(function() {
+			playSoundByNote('silence');
+
+			var songLocation = getUrlVars()['song'];
+			console.log('Playing: ' + songLocation);
+
+			$.getJSON(songLocation, function(data) {
+				console.log('Fully loaded: ' + songLocation);
+				playDictionaryOfNotes(data.notes);
+			});
+		}, 500);
+	}
+
+	function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+			vars[key] = value;
+		});
+		return vars;
+	}
+
 });

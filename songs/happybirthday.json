@@ -1,0 +1,32 @@
+{
+	"notes" : [
+		{"note": "g", "delay": 200},
+		{"note": "g", "delay": 220},
+		{"note": "a", "delay": 300},
+		{"note": "g", "delay": 300},
+		{"note": "c-small", "delay": 300},
+		{"note": "b", "delay": 300},
+
+		{"note": "g", "delay": 500},
+		{"note": "g", "delay": 300},
+		{"note": "a", "delay": 300},
+		{"note": "g", "delay": 300},
+		{"note": "d-small", "delay": 300},
+		{"note": "c-small", "delay": 400},
+
+		{"note": "g", "delay": 500},
+		{"note": "g", "delay": 300},
+		{"note": "e-small", "delay": 300},
+		{"note": "c-small", "delay": 300},
+		{"note": "b", "delay": 300},
+		{"note": "a", "delay": 300},
+		{"note": "g", "delay": 300},
+
+		{"note": "f", "delay": 500},
+		{"note": "f", "delay": 300},
+		{"note": "e", "delay": 300},
+		{"note": "c", "delay": 300},
+		{"note": "d", "delay": 300},
+		{"note": "c", "delay": 300}
+	]
+}
